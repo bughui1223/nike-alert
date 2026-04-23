@@ -61,7 +61,7 @@ public class NikeAlert {
         try (Playwright playwright = Playwright.create()) {
             Browser browser = playwright.chromium().launch(
                     new BrowserType.LaunchOptions()
-                            .setHeadless(false)
+                            .setHeadless(true)
                             .setSlowMo(300)
             );
 
