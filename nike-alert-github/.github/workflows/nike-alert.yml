@@ -1,26 +1,8 @@
-name: Nike Alert
+- name: Install xvfb
+    run: sudo apt-get update && sudo apt-get install -y xvfb
 
-on:
-  schedule:
-    - cron: '*/5 * * * *'   # every 5 minutes (UTC)
-  workflow_dispatch:        # manual trigger for testing
-
-jobs:
-  check:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-
-      - name: Run Nike alert
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: mvn -q compile exec:java -Dexec.mainClass="com.christie.alert.NikeAlert"
+    - name: Run Nike alert
+      env:
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
+      run: xvfb-run -a mvn -q compile exec:java -Dexec.mainClass="com.christie.alert.NikeAlert"
