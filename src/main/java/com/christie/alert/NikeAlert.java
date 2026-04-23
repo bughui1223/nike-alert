@@ -27,12 +27,12 @@ public class NikeAlert {
             "//span[@onclick and (contains (text(),'加入購物車'))]|//*[@class='if-you-like-sold-out iyl-button' and @style != 'display:none']//span[contains (text(),'售罄') ]| //*[@class='if-you-like-qs iyl-button' and @style != 'display:none']//span[contains (text(),'結算')]";
 
     // TODO: 改成你自己嘅 Telegram Bot Token
-    private static final String BOT_TOKEN = "8602045465:AAGft6yHBJWjDdZXqyevq1kzXz5ItwOr5RU";
-    //private static final String BOT_TOKEN = System.getenv("BOT_TOKEN");
+//    private static final String BOT_TOKEN = "8602045465:AAGft6yHBJWjDdZXqyevq1kzXz5ItwOr5RU";
+    private static final String BOT_TOKEN = System.getenv("BOT_TOKEN");
 
     // TODO: 改成你自己嘅 Telegram Chat ID
-    private static final String CHAT_ID = "33130039";
-//    private static final String CHAT_ID = System.getenv("CHAT_ID");
+//    private static final String CHAT_ID = "33130039";
+    private static final String CHAT_ID = System.getenv("CHAT_ID");
 
     // 防止同一狀態不停發通知
     //private static final Path STATE_FILE = Path.of("nike_alert_sent.txt");
