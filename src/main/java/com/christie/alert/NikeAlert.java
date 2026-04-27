@@ -76,20 +76,20 @@ public class NikeAlert {
 
             page.waitForTimeout(5000);
 
-            //String xpathCart = "//span[@onclick and (contains (text(),'加入購物車'))]";
-            String xpathCheckout = "//*[@class='if-you-like-qs iyl-button' and @style != 'display:none']//span[contains (text(),'結算')]";
-            String xpathSoldOut = "//*[@class='if-you-like-sold-out iyl-button' and @style != 'display:none']//span[contains (text(),'售罄') ]";
+            String xpathCart = "//span[@onclick and (contains (text(),'加入購物車'))]";
+//            String xpathCheckout = "//*[@class='if-you-like-qs iyl-button' and @style != 'display:none']//span[contains (text(),'結算')]";
+//            String xpathSoldOut = "//*[@class='if-you-like-sold-out iyl-button' and @style != 'display:none']//span[contains (text(),'售罄') ]";
 
-            //int cartCount = page.locator("xpath=" + xpathCart).count();
-            int checkoutCount = page.locator("xpath=" + xpathCheckout).count();
-            int soldOutCount = page.locator("xpath=" + xpathSoldOut).count();
+            int cartCount = page.locator("xpath=" + xpathCart).count();
+//            int checkoutCount = page.locator("xpath=" + xpathCheckout).count();
+//            int soldOutCount = page.locator("xpath=" + xpathSoldOut).count();
 
-            //System.out.println("加入購物車 count = " + cartCount);
-            System.out.println("結算 count = " + checkoutCount);
-            System.out.println("售罄 count = " + soldOutCount);
+            System.out.println("加入購物車 count = " + cartCount);
+//            System.out.println("結算 count = " + checkoutCount);
+//            System.out.println("售罄 count = " + soldOutCount);
 
-            //boolean found = cartCount > 0;
-            boolean found = soldOutCount > 0;
+            boolean found = cartCount > 0;
+//            boolean found = soldOutCount > 0;
 
             browser.close();
             return found;
